@@ -47,7 +47,7 @@ public class OrderService {
         }
 
     }
-    
+
     public ObservableList<Order> showOrders() {
         ObservableList<Order> orderObservableList = FXCollections.observableArrayList();
         String query = "SELECT * FROM commande";
@@ -69,5 +69,20 @@ public class OrderService {
         }
         return orderObservableList;
     }
-    
+
+    public int findLastOrder() {
+        String query = "SELECT * FROM commande";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.getConnection().prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet.last();
+            int id = resultSet.getInt("id");
+            return id;
+        } catch (SQLException ex) {
+            Logger.getLogger(OrderService.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        }
+    }
+
 }

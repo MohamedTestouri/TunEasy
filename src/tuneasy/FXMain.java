@@ -20,7 +20,7 @@ public class FXMain extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException{
-         Parent root = FXMLLoader.load(getClass().getResource("./views/LoginFXML.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("/views/LoginFXML.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("TunEasy");
         primaryStage.setScene(scene);

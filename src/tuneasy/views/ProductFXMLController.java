@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import tuneasy.entities.Product;
@@ -60,23 +61,24 @@ public class ProductFXMLController implements Initializable {
             categoryTextField.setText("" + product.getIdCategory());
             prixTextField.setText("" + product.getPrix());
         }
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                name = nameTextField.getText();
-                description = descriptionTextField.getText();
-                subtitle = subtitleTextField.getText();
-                image = imageTextField.getText();
-                category = Integer.parseInt(categoryTextField.getText());
-                prix = Double.parseDouble(prixTextField.getText());
-                Product product = new Product(name, image, subtitle, description, prix, category);
-                if (!selected) {
-                    productService.addProduct(product);
-                } else {
-                    productService.updateProduct(idProduct, product);
-                    productService.selected = false;
-                }
-
+        submitButton.setOnAction((ActionEvent event) -> {
+            name = nameTextField.getText();
+            description = descriptionTextField.getText();
+            subtitle = subtitleTextField.getText();
+            image = imageTextField.getText();
+            category = Integer.parseInt(categoryTextField.getText());
+            prix = Double.parseDouble(prixTextField.getText());
+            Product product = new Product(name, image, subtitle, description, prix, category);
+            if (!selected) {
+                productService.addProduct(product);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Product added");
+                alert.setHeaderText(null);
+                alert.setContentText("Ypur product has been successfully added!");
+                alert.showAndWait();
+            } else {
+                productService.updateProduct(idProduct, product);
+                productService.selected = false;
             }
         });
 

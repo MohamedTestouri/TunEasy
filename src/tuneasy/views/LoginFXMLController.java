@@ -17,6 +17,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -68,6 +70,11 @@ public class LoginFXMLController implements Initializable {
                 }
             } else {
                 System.out.println("ERROR LOGIN !");
+                Alert alert = new Alert(AlertType.ERROR);
+                alert.setTitle("Error Login");
+                alert.setHeaderText(null);
+                alert.setContentText("Ooops, there was an error!");
+                alert.showAndWait();
             }
         });
     }

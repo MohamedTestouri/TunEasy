@@ -31,6 +31,13 @@ public class OrderDetails {
         this.total = total;
     }
 
+    public OrderDetails(int idProduct, int quantity, double total) {
+        this.idProduct = idProduct;
+        this.quantity = quantity;
+        this.total = total;
+    }
+    
+
     public int getId() {
         return id;
     }
