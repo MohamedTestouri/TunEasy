@@ -37,7 +37,7 @@ public class OrderService {
     }
 
     public void updateOrderStatus(int id) {
-        String query = "UPDATE commande SET status= Delivered WHERE id = " + id;
+        String query = "UPDATE commande SET status= delivered WHERE id = " + id;
         try {
             PreparedStatement preparedStatement = connection.getConnection().prepareStatement(query);
             preparedStatement.executeUpdate();
