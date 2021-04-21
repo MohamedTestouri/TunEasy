@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuneasy.views.RegisterFXMLController">
+   <children>
+      <TextField fx:id="firstNameTextField" layoutX="33.0" layoutY="27.0" promptText="first name ..." />
+      <TextField fx:id="lastNameTextField" layoutX="40.0" layoutY="61.0" promptText="Last Name..." />
+      <TextField fx:id="emailTextField" layoutX="58.0" layoutY="104.0" promptText="E-mail..." />
+      <TextField fx:id="imageTextField" layoutX="33.0" layoutY="224.0" promptText="Image URL..." />
+      <TextField fx:id="roleTextField" layoutX="33.0" layoutY="267.0" promptText="Role" />
+      <Button fx:id="registerButton" layoutX="82.0" layoutY="305.0" mnemonicParsing="false" text="Register" />
+      <PasswordField fx:id="passwordTextField" layoutX="33.0" layoutY="141.0" promptText="Password" />
+      <PasswordField fx:id="rePasswordTextField" layoutX="33.0" layoutY="176.0" promptText="Re-type Password" />
+      <Button fx:id="loginButton" layoutX="25.0" layoutY="353.0" mnemonicParsing="false" text="Already have an account?" />
+   </children>
+</AnchorPane>

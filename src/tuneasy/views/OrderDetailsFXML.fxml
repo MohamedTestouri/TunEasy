@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuneasy.views.OrderDetailsFXMLController">
+   <children>
+      <TableView fx:id="orderDetailsTableView" layoutX="14.0" layoutY="14.0" prefHeight="364.0" prefWidth="565.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="#" />
+          <TableColumn fx:id="idProductColumn" prefWidth="106.0" text="id Product" />
+            <TableColumn fx:id="idOrderColumn" prefWidth="87.0" text="id Order" />
+            <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="totalColumn" prefWidth="75.0" text="Total" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

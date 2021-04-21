@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="tuneasy.GUI.ProductsFXMLController">
+   <children>
+      <TableView fx:id="productTableView" layoutX="22.0" layoutY="62.0" prefHeight="286.0" prefWidth="556.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="37.0" text="#" />
+          <TableColumn fx:id="nameColumn" prefWidth="113.0" text="Name" />
+            <TableColumn fx:id="categoryColumn" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="subtitleColumn" prefWidth="75.0" text="Subtitle" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="194.0" text="Description" />
+            <TableColumn fx:id="prixColumn" prefWidth="56.0" text="Prix" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTextField" layoutX="325.0" layoutY="24.0" promptText="Search Product ..." />
+      <Button fx:id="searchButton" layoutX="508.0" layoutY="24.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="addButton" layoutX="76.0" layoutY="359.0" mnemonicParsing="false" text="Add" />
+      <Button fx:id="editButton" layoutX="269.0" layoutY="359.0" mnemonicParsing="false" text="Edit" />
+      <Button fx:id="deleteButton" layoutX="465.0" layoutY="359.0" mnemonicParsing="false" text="Delete" />
+   </children>
+</AnchorPane>

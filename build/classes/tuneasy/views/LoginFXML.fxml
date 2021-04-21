@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuneasy.views.LoginFXMLController">
+   <children>
+      <TextField fx:id="emailTextField" layoutX="215.0" layoutY="143.0" promptText="e-mail ... " />
+      <PasswordField fx:id="passwordTextField" layoutX="215.0" layoutY="208.0" promptText="password ..." />
+      <Button fx:id="loginButton" layoutX="270.0" layoutY="283.0" mnemonicParsing="false" text="Login" />
+      <Button fx:id="signupButton" layoutX="224.0" layoutY="362.0" mnemonicParsing="false" text="Create an account ? " />
+      <Button fx:id="resetPasswordButton" layoutX="324.0" layoutY="240.0" mnemonicParsing="false" text="Forget Password?" />
+   </children>
+</AnchorPane>
