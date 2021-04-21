@@ -84,8 +84,12 @@ public class StoreFXMLController implements Initializable {
             int quantity = Integer.parseInt(quantityTextField.getText());
             double total = quantity * productTableView.getSelectionModel().getSelectedItem().getPrix();
             orderDetails = new OrderDetails(idProduct, 0, quantity, total);
+            displayOrder();
+            orderTableView.getItems().add(orderDetails);
+//if doesn't work just try setIems
             double totalOrder = Double.parseDouble(totalLabel.getText()) + total;
             totalLabel.setText(totalOrder + "");
+            orderTableView.refresh();
 
         });
         orderButton.setOnAction((t) -> {
@@ -98,6 +102,7 @@ public class StoreFXMLController implements Initializable {
             alert.setContentText("Your order has been successfully saved!");
             alert.showAndWait();
             orderTableView.getItems().clear();
+            orderTableView.refresh();
         });
     }
 
@@ -109,6 +114,12 @@ public class StoreFXMLController implements Initializable {
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         prixColumn.setCellValueFactory(new PropertyValueFactory<>("prix"));
         productTableView.setItems(productService.showProduct());
+    }
+
+    public void displayOrder() {
+        idProductColumn.setCellValueFactory(new PropertyValueFactory<>("idProduct"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
     }
 
     public void saveOrderDetails() {
